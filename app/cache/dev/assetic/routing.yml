@@ -1,0 +1,5 @@
+_assetic:
+    resource: .
+    type: assetic
+_app:
+    resource: 'C:\wamp\www\cooperative-urbaine_symfony\cooperative-urbaine\app/config/routing_dev.yml'
