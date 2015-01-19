@@ -1,0 +1,30 @@
+adresse:
+    path:     /
+    defaults: { _controller: "CooperativeBundle:Adresse:index" }
+
+adresse_show:
+    path:     /{id}/show
+    defaults: { _controller: "CooperativeBundle:Adresse:show" }
+
+adresse_new:
+    path:     /new
+    defaults: { _controller: "CooperativeBundle:Adresse:new" }
+
+adresse_create:
+    path:     /create
+    defaults: { _controller: "CooperativeBundle:Adresse:create" }
+    requirements: { _method: post }
+
+adresse_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CooperativeBundle:Adresse:edit" }
+
+adresse_update:
+    path:     /{id}/update
+    defaults: { _controller: "CooperativeBundle:Adresse:update" }
+    requirements: { _method: post|put }
+
+adresse_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CooperativeBundle:Adresse:delete" }
+    requirements: { _method: post|delete }

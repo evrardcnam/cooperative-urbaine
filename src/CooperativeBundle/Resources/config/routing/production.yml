@@ -1,0 +1,30 @@
+production:
+    path:     /
+    defaults: { _controller: "CooperativeBundle:Production:index" }
+
+production_show:
+    path:     /{id}/show
+    defaults: { _controller: "CooperativeBundle:Production:show" }
+
+production_new:
+    path:     /new
+    defaults: { _controller: "CooperativeBundle:Production:new" }
+
+production_create:
+    path:     /create
+    defaults: { _controller: "CooperativeBundle:Production:create" }
+    requirements: { _method: post }
+
+production_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CooperativeBundle:Production:edit" }
+
+production_update:
+    path:     /{id}/update
+    defaults: { _controller: "CooperativeBundle:Production:update" }
+    requirements: { _method: post|put }
+
+production_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CooperativeBundle:Production:delete" }
+    requirements: { _method: post|delete }

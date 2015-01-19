@@ -1,0 +1,60 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Production</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Idproduction</th>
+                <td>{{ entity.idProduction }}</td>
+            </tr>
+            <tr>
+                <th>Produits</th>
+                <td>{{ entity.produits }}</td>
+            </tr>
+            <tr>
+                <th>Productionmax</th>
+                <td>{{ entity.productionMax }}</td>
+            </tr>
+            <tr>
+                <th>Coutproduit</th>
+                <td>{{ entity.coutProduit }}</td>
+            </tr>
+            <tr>
+                <th>Ccommandemin</th>
+                <td>{{ entity.ccommandeMin }}</td>
+            </tr>
+            <tr>
+                <th>Commandemax</th>
+                <td>{{ entity.commandeMax }}</td>
+            </tr>
+            <tr>
+                <th>Ddatedebut</th>
+                <td>{{ entity.ddateDebut }}</td>
+            </tr>
+            <tr>
+                <th>Ddatefin</th>
+                <td>{{ entity.ddateFin }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('production') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('production_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

@@ -1,0 +1,4 @@
+cooperative:
+    resource: "@CooperativeBundle/Resources/config/routing.yml"
+    prefix:   /
+

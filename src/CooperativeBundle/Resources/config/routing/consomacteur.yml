@@ -1,0 +1,30 @@
+consomacteur:
+    path:     /
+    defaults: { _controller: "CooperativeBundle:Consomacteur:index" }
+
+consomacteur_show:
+    path:     /{id}/show
+    defaults: { _controller: "CooperativeBundle:Consomacteur:show" }
+
+consomacteur_new:
+    path:     /new
+    defaults: { _controller: "CooperativeBundle:Consomacteur:new" }
+
+consomacteur_create:
+    path:     /create
+    defaults: { _controller: "CooperativeBundle:Consomacteur:create" }
+    requirements: { _method: post }
+
+consomacteur_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CooperativeBundle:Consomacteur:edit" }
+
+consomacteur_update:
+    path:     /{id}/update
+    defaults: { _controller: "CooperativeBundle:Consomacteur:update" }
+    requirements: { _method: post|put }
+
+consomacteur_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CooperativeBundle:Consomacteur:delete" }
+    requirements: { _method: post|delete }

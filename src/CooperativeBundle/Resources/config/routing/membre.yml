@@ -1,0 +1,30 @@
+membre:
+    path:     /
+    defaults: { _controller: "CooperativeBundle:Membre:index" }
+
+membre_show:
+    path:     /{id}/show
+    defaults: { _controller: "CooperativeBundle:Membre:show" }
+
+membre_new:
+    path:     /new
+    defaults: { _controller: "CooperativeBundle:Membre:new" }
+
+membre_create:
+    path:     /create
+    defaults: { _controller: "CooperativeBundle:Membre:create" }
+    requirements: { _method: post }
+
+membre_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CooperativeBundle:Membre:edit" }
+
+membre_update:
+    path:     /{id}/update
+    defaults: { _controller: "CooperativeBundle:Membre:update" }
+    requirements: { _method: post|put }
+
+membre_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CooperativeBundle:Membre:delete" }
+    requirements: { _method: post|delete }
