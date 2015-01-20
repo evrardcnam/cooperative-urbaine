@@ -1,10 +1,80 @@
-{%  etends 'CooperativeBundle::baseadmin.html.twig' %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Cooperative urbaine :  Panel Admin {% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BackOffice de Coopérative urbaine">
+
+    <link href="{{ asset('bundles/cooperative/css/bootstrap.min.css') }}" rel="stylesheet">
 
 
-//TO COMPLETE
+</head>
+
+<body class="preview" data-spy="scroll" data-target=".subnav" data-offset="80">
 
 
-{% block menu -%}
-    {% set activeMenu = "idproduction" %}
-    {{ parent() }}
-{%  endblock %}
+<!-- Navbar
+================================================== -->
+<section id="navbar">
+    <div class="container" style="width: auto;">
+        <div class="row">
+            <div class="col-lg-5">
+                <h1>Backoffice Parcours Culturel</h1>
+            </div>
+        </div>
+        {%set activeMenu = '' %}
+        {% block menu %}
+            <nav class="navbar navbar-inverse">
+                <ul class="nav navbar-nav">
+                    <li id="idproduit"><a href="{{ path('produit') }}" class="{% if activeMenu == 'idproduit' %} active {% endif %}">Produit</a></li>
+                    <li id="idproduction"><a href="{{ path('production') }}" class="{% if activeMenu == 'idproduction' %} active {% endif %}">Production</a></li>
+                    <li id="idmembre"><a href="{{ path('membre') }}" class="{% if activeMenu == 'idmembre' %} active {% endif %}">Membre</a></li>
+                    <li id="idmaraicher"><a href="{{ path('maraicher') }}" class="{% if activeMenu == 'idmaraicher' %} active {% endif %}">Maraicher</a></li>
+                    <li id="idconsomacteur"><a href="{{ path('consomacteur') }}" class="{% if activeMenu == 'idconsomacteur' %} active {% endif %}">Consomacteur</a></li>
+                    <li id="idadresse"><a href="{{ path('adresse') }}" class="{% if activeMenu == 'idadresse' %} active {% endif %}">Adresse</a></li>
+
+                </ul>
+                <ul class="nav pull-right">
+                    <li><a href="{{ path('produit') }}">Accéder au site</a></li>
+                </ul>
+            </nav><!-- /navbar -->
+        {% endblock %}
+    </div>
+</section>
+<div class="container" style="width: auto;">
+    {% block body %}
+
+    {% endblock %}
+    <section id ="information">
+
+        {% block info %}{% endblock %}
+
+
+
+
+
+    </section>
+
+    <!-- Footer
+     ================================================== -->
+
+    <footer id="footer">
+        <hr>
+        <p class="pull-right"><a href="#">Revenir en haut</a></p>
+        <div class="links">
+            <a href="#">BackOffice Cooperative urbaine</a>
+        </div>
+        Basé sur <a target="_blank" href="http://twitter.github.com/bootstrap/">Bootstrap</a> Icons de <a target="_blank" href="http://glyphicons.com/">Glyphicons</a><br>Web fonts de <a target="_blank" href="http://www.google.com/webfonts">Google</a>.</p>
+    </footer>
+
+</div><!-- /container -->
+
+{% block javascripts %}
+
+    <script type="text/javascript" src="{{ asset('bundles/cooperative/js/bootstrap.min.js') }}"></script>
+
+{% endblock %}
+
+</body>
+</html>

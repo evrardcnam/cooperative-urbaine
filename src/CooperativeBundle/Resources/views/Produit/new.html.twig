@@ -1,15 +1,58 @@
-{% extends '::base.html.twig' %}
+{% extends 'CooperativeBundle::baseProduit.html.twig' %}
 
 {% block body -%}
     <h1>Produit creation</h1>
 
-    {{ form(form) }}
+    <form action="{{path('produit') }}" method="post" {{ form_enctype(form) }}>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('produit') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+    {{ form_errors(form) }}
+
+        <div class="row">
+            <div class="col-lg-1">
+                {{ (form_label(form.idProduit)) }}
+            </div>
+            <div>
+                {{ (form_errors(form.idProduit)) }}
+                {{ (form_widget(form.idProduit)) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-1">
+                {{ (form_label(form.nomProduit)) }}
+            </div>
+            <div>
+                {{ (form_errors(form.nomProduit)) }}
+                {{ (form_widget(form.nomProduit)) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-1">
+                {{ (form_label(form.typeProduit)) }}
+            </div>
+            <div>
+                {{ (form_errors(form.typeProduit)) }}
+                {{ (form_widget(form.typeProduit)) }}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-1">
+                {{ (form_label(form.dispoProduit)) }}
+            </div>
+            <div>
+                {{ (form_errors(form.dispoProduit)) }}
+                {{ (form_widget(form.dispoProduit)) }}
+            </div>
+        </div>
+
+
+    {{ form_widget(form.submit,{attr:{"class": "btn btn-primary"}}) }}
+
+    {{ form_rest(form) }}
+
+
+    <a class="btn btn-primary" href="{{ path('produit') }}">
+        Back to the list
+    </a>
+
+
 {% endblock %}

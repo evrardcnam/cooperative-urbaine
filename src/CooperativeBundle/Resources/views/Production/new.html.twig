@@ -3,13 +3,91 @@
 {% block body -%}
     <h1>Production creation</h1>
 
-    {{ form(form) }}
+<form action="{{path('produit') }}" method="post" {{ form_enctype(form) }}>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('production') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+    {{ form_errors(form) }}
+
+    <div class="row">
+        <div class="col-lg-1">
+            {{ (form_label(form.idProduction)) }}
+        </div>
+        <div>
+            {{ (form_errors(form.idProduction)) }}
+            {{ (form_widget(form.idProduction)) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1">
+            {{ (form_label(form.produits)) }}
+        </div>
+        <div>
+            {{ (form_errors(form.produits)) }}
+            {{ (form_widget(form.produits)) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1">
+            {{ (form_label(form.productionMax)) }}
+        </div>
+        <div>
+            {{ (form_errors(form.productionMax)) }}
+            {{ (form_widget(form.productionMax)) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1">
+            {{ (form_label(form.coutProduit)) }}
+        </div>
+        <div>
+            {{ (form_errors(form.coutProduit)) }}
+            {{ (form_widget(form.coutProduit)) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1">
+            {{ (form_label(form.ccommandeMin)) }}
+        </div>
+        <div>
+            {{ (form_errors(form.ccommandeMin)) }}
+            {{ (form_widget(form.ccommandeMin)) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1">
+            {{ (form_label(form.commandeMax)) }}
+        </div>
+        <div>
+            {{ (form_errors(form.commandeMax)) }}
+            {{ (form_widget(form.commandeMax)) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1">
+            {{ (form_label(form.ddateDebut)) }}
+        </div>
+        <div>
+            {{ (form_errors(form.ddateDebut)) }}
+            {{ (form_widget(form.ddateDebut)) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1">
+            {{ (form_label(form.ddateFin)) }}
+        </div>
+        <div>
+            {{ (form_errors(form.ddateFin)) }}
+            {{ (form_widget(form.ddateFin)) }}
+        </div>
+    </div>
+
+
+    {{ form_widget(form.submit,{attr:{"class": "btn btn-primary"}}) }}
+
+    {{ form_rest(form) }}
+
+
+    <a class="btn btn-primary" href="{{ path('production') }}">
+        Back to the list
+    </a>
+
 {% endblock %}

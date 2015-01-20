@@ -1,9 +1,9 @@
-{% extends '::base.html.twig' %}
+{% extends 'CooperativeBundle::baseproduit.html.twig' %}
 
 {% block body -%}
     <h1>Produit list</h1>
 
-    <table class="records_list">
+    <table class="table table-condensed">
         <thead>
             <tr>
                 <th>Id</th>
@@ -25,10 +25,10 @@
                 <td>
                 <ul>
                     <li>
-                        <a href="{{ path('produit_show', { 'id': entity.id }) }}">show</a>
+                        <a class="btn btn-primary" href="{{ path('produit_show', { 'id': entity.id }) }}">show</a>
                     </li>
                     <li>
-                        <a href="{{ path('produit_edit', { 'id': entity.id }) }}">edit</a>
+                        <a class="btn btn-primary" href="{{ path('produit_edit', { 'id': entity.id }) }}">edit</a>
                     </li>
                 </ul>
                 </td>

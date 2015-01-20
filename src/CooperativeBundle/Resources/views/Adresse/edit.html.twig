@@ -1,4 +1,4 @@
-{% extends 'CooperativeBundle::adresseproduction.html.twig' %}
+{% extends 'CooperativeBundle::baseadresse.html.twig' %}
 
 {% block body -%}
     <h1>Adresse edit</h1>
@@ -7,7 +7,7 @@
 
         <ul class="record_actions">
     <li>
-        <a href="{{ path('adresse') }}">
+        <a class="btn btn-primary" href="{{ path('adresse') }}">
             Back to the list
         </a>
     </li>

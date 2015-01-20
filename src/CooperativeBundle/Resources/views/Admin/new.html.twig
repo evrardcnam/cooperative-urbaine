@@ -1,15 +1,30 @@
-{% extends 'CooperativeBundle::adminproduction.html.twig' %}
+{% extends 'CooperativeBundle::baseadmin.html.twig' %}
 
 {% block body -%}
     <h1>Admin creation</h1>
 
-    {{ form(form) }}
+<form action="{{path('produit') }}" method="post" {{ form_enctype(form) }}>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('admin') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+    {{ form_errors(form) }}
+
+    <div class="row">
+        <div class="col-lg-1">
+            {{ (form_label(form.idAdmin)) }}
+        </div>
+        <div>
+            {{ (form_errors(form.idAdmin)) }}
+            {{ (form_widget(form.idAdmin)) }}
+        </div>
+    </div>
+
+
+
+    {{ form_widget(form.submit,{attr:{"class": "btn btn-primary"}}) }}
+
+    {{ form_rest(form) }}
+
+    <a class="btn btn-primary" href="{{ path('admin') }}">
+        Back to the list
+    </a>
+
 {% endblock %}

@@ -1,9 +1,9 @@
-{% extends 'CooperativeBundle::consomacteurproduction.html.twig' %}
+{% extends 'CooperativeBundle::baseconsomacteur.html.twig' %}
 
 {% block body -%}
     <h1>Consomacteur list</h1>
 
-    <table class="records_list">
+    <table class="table table-condensed">
         <thead>
             <tr>
                 <th>Id</th>
@@ -21,10 +21,10 @@
                 <td>
                 <ul>
                     <li>
-                        <a href="{{ path('consomacteur_show', { 'id': entity.id }) }}">show</a>
+                        <a class="btn btn-primary" href="{{ path('consomacteur_show', { 'id': entity.id }) }}">show</a>
                     </li>
                     <li>
-                        <a href="{{ path('consomacteur_edit', { 'id': entity.id }) }}">edit</a>
+                        <a class="btn btn-primary" href="{{ path('consomacteur_edit', { 'id': entity.id }) }}">edit</a>
                     </li>
                 </ul>
                 </td>

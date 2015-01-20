@@ -1,15 +1,47 @@
-{% extends 'CooperativeBundle::maraicherproduction.html.twig' %}
+{% extends 'CooperativeBundle::basemaraicher.html.twig' %}
 
 {% block body -%}
     <h1>Maraicher creation</h1>
 
-    {{ form(form) }}
+<form action="{{path('produit') }}" method="post" {{ form_enctype(form) }}>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('maraicher') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+    {{ form_errors(form) }}
+
+    <div class="row">
+        <div class="col-lg-1">
+            {{ (form_label(form.idMaraicher)) }}
+        </div>
+        <div>
+            {{ (form_errors(form.idMaraicher)) }}
+            {{ (form_widget(form.idMaraicher)) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1">
+            {{ (form_label(form.productionMaraicher)) }}
+        </div>
+        <div>
+            {{ (form_errors(form.productionMaraicher)) }}
+            {{ (form_widget(form.productionMaraicher)) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1">
+            {{ (form_label(form.adresseExploitation)) }}
+        </div>
+        <div>
+            {{ (form_errors(form.adresseExploitation)) }}
+            {{ (form_widget(form.adresseExploitation)) }}
+        </div>
+    </div>
+
+
+    {{ form_widget(form.submit,{attr:{"class": "btn btn-primary"}}) }}
+
+    {{ form_rest(form) }}
+
+    <a class="btn btn-primary" href="{{ path('maraicher') }}">
+        Back to the list
+    </a>
+
 {% endblock %}

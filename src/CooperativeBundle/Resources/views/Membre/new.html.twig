@@ -1,15 +1,66 @@
-{% extends 'CooperativeBundle::membreproduction.html.twig' %}
+{% extends 'CooperativeBundle::basemembre.html.twig' %}
 
 {% block body -%}
     <h1>Membre creation</h1>
 
-    {{ form(form) }}
+<form action="{{path('produit') }}" method="post" {{ form_enctype(form) }}>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('membre') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+    {{ form_errors(form) }}
+
+    <div class="row">
+        <div class="col-lg-1">
+            {{ (form_label(form.idMembre)) }}
+        </div>
+        <div>
+            {{ (form_errors(form.idMembre)) }}
+            {{ (form_widget(form.idMembre)) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1">
+            {{ (form_label(form.nomMembre)) }}
+        </div>
+        <div>
+            {{ (form_errors(form.nomMembre)) }}
+            {{ (form_widget(form.nomMembre)) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1">
+            {{ (form_label(form.mdpMembre)) }}
+        </div>
+        <div>
+            {{ (form_errors(form.mdpMembre)) }}
+            {{ (form_widget(form.mdpMembre)) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1">
+            {{ (form_label(form.age_membre)) }}
+        </div>
+        <div>
+            {{ (form_errors(form.age_membre)) }}
+            {{ (form_widget(form.age_membre)) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1">
+            {{ (form_label(form.commentaire_personnel)) }}
+        </div>
+        <div>
+            {{ (form_errors(form.commentaire_personnel)) }}
+            {{ (form_widget(form.commentaire_personnel)) }}
+        </div>
+    </div>
+
+
+    {{ form_widget(form.submit,{attr:{"class": "btn btn-primary"}}) }}
+
+    {{ form_rest(form) }}
+
+
+    <a class="btn btn-primary" href="{{ path('membre') }}">
+        Back to the list
+    </a>
+
 {% endblock %}

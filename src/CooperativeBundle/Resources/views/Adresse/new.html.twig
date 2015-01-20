@@ -1,15 +1,74 @@
-{% extends 'CooperativeBundle::adresseproduction.html.twig' %}
+{% extends 'CooperativeBundle::baseadresse.html.twig' %}
 
 {% block body -%}
     <h1>Adresse creation</h1>
 
-    {{ form(form) }}
+<form action="{{path('produit') }}" method="post" {{ form_enctype(form) }}>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('adresse') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+    {{ form_errors(form) }}
+
+    <div class="row">
+        <div class="col-lg-1">
+            {{ (form_label(form.idAdresse)) }}
+        </div>
+        <div>
+            {{ (form_errors(form.idAdresse)) }}
+            {{ (form_widget(form.idAdresse)) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1">
+            {{ (form_label(form.rue)) }}
+        </div>
+        <div>
+            {{ (form_errors(form.rue)) }}
+            {{ (form_widget(form.rue)) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1">
+            {{ (form_label(form.numVoie)) }}
+        </div>
+        <div>
+            {{ (form_errors(form.numVoie)) }}
+            {{ (form_widget(form.numVoie)) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1">
+            {{ (form_label(form.ville)) }}
+        </div>
+        <div>
+            {{ (form_errors(form.ville)) }}
+            {{ (form_widget(form.ville)) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1">
+            {{ (form_label(form.codePostal)) }}
+        </div>
+        <div>
+            {{ (form_errors(form.codePostal)) }}
+            {{ (form_widget(form.codePostal)) }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1">
+            {{ (form_label(form.numBatiment)) }}
+        </div>
+        <div>
+            {{ (form_errors(form.numBatiment)) }}
+            {{ (form_widget(form.numBatiment)) }}
+        </div>
+    </div>
+
+
+    {{ form_widget(form.submit,{attr:{"class": "btn btn-primary"}}) }}
+
+    {{ form_rest(form) }}
+
+    <a class="btn btn-primary" href="{{ path('adresse') }}">
+        Back to the list
+    </a>
+
 {% endblock %}

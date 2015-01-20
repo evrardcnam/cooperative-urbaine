@@ -1,4 +1,4 @@
-{% extends 'CooperativeBundle::maraicherproduction.html.twig' %}
+{% extends 'CooperativeBundle::basemaraicher.html.twig' %}
 
 {% block body -%}
     <h1>Maraicher edit</h1>
@@ -7,7 +7,7 @@
 
         <ul class="record_actions">
     <li>
-        <a href="{{ path('maraicher') }}">
+        <a class="btn btn-primary" href="{{ path('maraicher') }}">
             Back to the list
         </a>
     </li>

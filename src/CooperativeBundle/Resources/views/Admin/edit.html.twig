@@ -1,4 +1,4 @@
-{% extends 'CooperativeBundle::adminproduction.html.twig' %}
+{% extends 'CooperativeBundle::baseadmin.html.twig' %}
 
 {% block body -%}
     <h1>Admin edit</h1>
@@ -7,7 +7,7 @@
 
         <ul class="record_actions">
     <li>
-        <a href="{{ path('admin') }}">
+        <a class="btn btn-primary" href="{{ path('admin') }}">
             Back to the list
         </a>
     </li>
