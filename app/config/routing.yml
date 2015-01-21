@@ -1,4 +1,10 @@
+src_user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /
+
 cooperative:
     resource: "@CooperativeBundle/Resources/config/routing.yml"
     prefix:   /
+fos_user:
+   resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 
