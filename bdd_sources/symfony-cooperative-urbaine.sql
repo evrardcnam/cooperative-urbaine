@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Lun 19 Janvier 2015 à 18:13
+-- Généré le :  Mer 21 Janvier 2015 à 18:49
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -47,7 +47,14 @@ CREATE TABLE IF NOT EXISTS `adresse` (
   `code_postal` int(11) NOT NULL,
   `num_batiment` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Contenu de la table `adresse`
+--
+
+INSERT INTO `adresse` (`id`, `id_adresse`, `rue`, `num_voie`, `ville`, `code_postal`, `num_batiment`) VALUES
+(1, 1, '5', 5, 'a', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -109,6 +116,43 @@ CREATE TABLE IF NOT EXISTS `membre` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `pcuser`
+--
+
+CREATE TABLE IF NOT EXISTS `pcuser` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `username_canonical` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email_canonical` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `enabled` tinyint(1) NOT NULL,
+  `salt` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `last_login` datetime DEFAULT NULL,
+  `locked` tinyint(1) NOT NULL,
+  `expired` tinyint(1) NOT NULL,
+  `expires_at` datetime DEFAULT NULL,
+  `confirmation_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `password_requested_at` datetime DEFAULT NULL,
+  `roles` longtext COLLATE utf8_unicode_ci NOT NULL COMMENT '(DC2Type:array)',
+  `credentials_expired` tinyint(1) NOT NULL,
+  `credentials_expire_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UNIQ_AEFA2DA692FC23A8` (`username_canonical`),
+  UNIQUE KEY `UNIQ_AEFA2DA6A0D96FBF` (`email_canonical`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+
+--
+-- Contenu de la table `pcuser`
+--
+
+INSERT INTO `pcuser` (`id`, `username`, `username_canonical`, `email`, `email_canonical`, `enabled`, `salt`, `password`, `last_login`, `locked`, `expired`, `expires_at`, `confirmation_token`, `password_requested_at`, `roles`, `credentials_expired`, `credentials_expire_at`) VALUES
+(1, 'user', 'user', 'user', 'user', 1, 'm2ucguk2gi884s8w4ko8gos0wgg0wco', 'rLjwkHT2BEUsivZYG0PybdenbvEAPZnT5ZIbYpkNO89QsgpqvNxSPdMNEVX57hGjw1MIKlWkwzz564P8v+zxPw==', '2015-01-21 18:23:52', 0, 0, NULL, NULL, NULL, 'a:0:{}', 0, NULL),
+(2, 'admin', 'admin', 'admin', 'admin', 1, 'hta7c5o2mugocwk0sowgw4kgg8ko4c8', 'BuImURgYkICb+2qrZ6PlrM/d+mhQd5jvzHxuZiMV/ixs65pTlB5EtkkGac8eJtCKCH/VDoF7snk5lA7g1or3Jw==', '2015-01-21 18:34:05', 0, 0, NULL, NULL, NULL, 'a:3:{i:0;s:14:"ADMINISTRATEUR";i:1;s:13:"AMINISTRATEUR";i:2;s:10:"ROLE_ADMIN";}', 0, NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `production`
 --
 
@@ -123,7 +167,7 @@ CREATE TABLE IF NOT EXISTS `production` (
   `ddate_debut` int(11) NOT NULL,
   `ddate_fin` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
 
 -- --------------------------------------------------------
 
@@ -138,7 +182,14 @@ CREATE TABLE IF NOT EXISTS `produit` (
   `type_produit` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `dispo_produit` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Contenu de la table `produit`
+--
+
+INSERT INTO `produit` (`id`, `id_produit`, `nom_produit`, `type_produit`, `dispo_produit`) VALUES
+(1, 1, 'S', 'S', 1);
 
 --
 -- Contraintes pour les tables exportées
